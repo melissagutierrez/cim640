@@ -7,4 +7,4 @@
 
 
 
-[link to week1 assignments page](https://github.com/melissagutierrez/cim640/tree/master/week1)
+[link to week1 assignments page](https://github.com/melissagutierrez/cim640/tree/master/week1.readme.md)
