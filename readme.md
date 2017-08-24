@@ -8,3 +8,6 @@
 
 
 [link to week1 assignments page](https://github.com/melissagutierrez/cim640/tree/master/week1/readme.md)
+
+
+![Puppies](https://www.dogbreedinfo.com/images19/EnglishCockerSpanielsAJLeftTommieLacono.JPG)
