@@ -1,5 +1,5 @@
 # CIM640
-## Hi! I'm Melissa
+## Hi! I'm Melissa Gutierrez
 ### I am currently pursing an MFA in Interactive Media at the University of Miami. 
 
 ### [Here's some of my work](http://www.melissa-gutierrez.com)
