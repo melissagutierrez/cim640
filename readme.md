@@ -1,6 +1,6 @@
 # CIM640
 ## Hi! I'm Melissa Gutierrez
-### I am currently pursing an MFA in Interactive Media at the University of Miami. 
+### Until a year ago, I was living in New York for six years. I got my BFA in Photography from Parsons The New School for Design. I really miss street cart coffee and lox bagels. I hope to pursue Interaction Design, though I have a lot of learning to do before then. I'm excited to be here! 
 
 ### [Here's some of my work](http://www.melissa-gutierrez.com)
 
