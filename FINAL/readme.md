@@ -2,6 +2,4 @@ For my final project, I’ve been considering three ideas. The first would be th
 
 
 http://m.cdn.blog.hu/ma/maimanohaz/image/bert_hardy/bert_hardy001.jpg
-
 https://truimg.toysrus.com/product/images/imaginarium-foam-building-blocks-100-piece--C3DB0DED.zoom.jpg?fit=inside|1600:1600
- 
