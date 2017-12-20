@@ -6,17 +6,9 @@ var sub;
 var mis;
 var got;
 
-function preload() 
-{
-  soundtrack = loadSound('assests/train.mp3');
-}
-
 function setup() {
   createCanvas(1000,650);
-    
-      // loop sound
-  soundtrack.loop();
-    
+     
   ban = loadAnimation("assests/banner.png");
     
   mis = createSprite(500, 194);
