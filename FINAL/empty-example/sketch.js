@@ -1,111 +1,85 @@
-var centerX = 0;
-var centerY = 0;
+//mouse states and mouse events on sprites
+//click and hold the mouse button while overing on the sprites
 
-var bgChange, bgChange1;
-
-var bgImage, bgImage2, currentBgImage;
-
-var hitZoneX = 100;
-var hitZoneY = 100;
-
-var changeColor = false;
-
-var randomColor = [0, 0, 0];
-
-var showHide = true;
-
-var showHideButton;
-
-
-function preload() {
-    bgImage = loadImage("images/museum.jpg");
-    bgImage2 = loadImage("images/halal.jpg");
-    bgImage3 = loadImage("images/CalleOcho.jpg");
-}
+var ban;
+var sub;
+var mis;
+var got;
 
 function setup() {
-    createCanvas(600, 600);
-    centerX = width / 2;
-    centerY = height / 2;
-
-    bgChange = createButton('scenario 1');
-    bgChange.position(10, 500);
-    bgChange.mousePressed(bgFunction);
-
-    bgChange1 = createButton('scenario 2');
-    bgChange1.position(110, 500);
-    bgChange1.mousePressed(bgFunction1);
+  createCanvas(1000,650);
     
-   bgChange2 = createButton('scenario 3');
-    bgChange2.position(200, 500);
-    bgChange2.mousePressed(bgFunction2);
+  ban = loadAnimation("assests/banner.png");
+    
+  mis = createSprite(500, 194);
+  mis.addAnimation("normal", "assests/10001.png");
+  mis.addAnimation("full", "assests/10004.png");
+  var anim = mis.addAnimation("train", "assests/10004.png", "assests/10027.png");
+    
+  stu = createSprite(500,368);
+  stu.addAnimation("normal", "assests/20001.png");
+  stu.addAnimation("full", "assests/20004.png");
+  var anim = stu.addAnimation("transform", "assests/20004.png", "assests/20033.png");
+
+  got = createSprite(500,542);
+  got.addAnimation("normal", "assests/30001.png");
+  got.addAnimation("full", "assests/30004.png");
+  var anim = got.addAnimation("transform", "assests/30004.png", "assests/30035.png");
 
 
+  mis.onMouseOver = function() {
+  this.changeAnimation("full");
+  }
+  mis.onMouseOut = function() {
+  this.changeAnimation("normal");
+  }
+  mis.onMousePressed = function() {
+  this.changeAnimation("train");
+  this.animation.goToFrame(this.animation.getLastFrame());
+  }
+  mis.onMouseReleased = function() {
+  this.changeAnimation("train");
+  this.animation.goToFrame(0);
+  }
 
-    currentBgImage = bgImage;
+
+  stu.onMouseOver = function() {
+  this.changeAnimation("full");
+  }
+  stu.onMouseOut = function() {
+  this.changeAnimation("normal");
+  }
+  stu.onMousePressed = function() {
+  this.changeAnimation("transform");
+  this.animation.goToFrame(this.animation.getLastFrame());
+  }
+  stu.onMouseReleased = function() {
+  this.changeAnimation("transform");
+  this.animation.goToFrame(0);
+  }
+
+
+  got.onMouseOver = function() {
+  this.changeAnimation("full");
+  }
+  got.onMouseOut = function() {
+  this.changeAnimation("normal");
+  }
+  got.onMousePressed = function() {
+  this.changeAnimation("transform");
+  this.animation.goToFrame(this.animation.getLastFrame());
+  }
+  got.onMouseReleased = function() {
+  this.changeAnimation("transform");
+  this.animation.goToFrame(0);
+  }
 }
 
 function draw() {
-    image(currentBgImage, 0, 0);
+  background(255,255,255);
 
-    if (changeColor == true) {
-        randomColor[0] = random(255);
-        randomColor[1] = random(255);
-        randomColor[2] = random(0);
-
-    }
+  animation(ban,500,53)
 
 
-    if (showHide == true) {
-        fill(randomColor[0], randomColor[1], randomColor[2]);
-
-        strokeWeight(2);
-        //ears
-        ellipse(centerX - 70, centerY - 90, 60, 60);
-        ellipse(centerX + 70, centerY - 90, 60, 60);
-        ellipse(centerX - 70, centerY - 80, 30, 30);
-        ellipse(centerX + 70, centerY - 80, 30, 30);
-        //face
-        ellipse(centerX, centerY, 175, 200);
-        //nose
-        ellipse(mouseX, mouseY + 10, 40, 40);
-        //eyes
-        fill(0)
-        ellipse(centerX - 40, centerY - 20, 40, 40);
-        ellipse(centerX + 40, centerY - 20, 40, 40);
-        fill(255)
-        ellipse(centerX - 40, centerY - 10, 10, 10);
-        ellipse(centerX + 40, centerY - 10, 10, 10);
-        //mouth
-        arc(centerX - 5, centerY + 30, 10, 10, 0, PI)
-        arc(centerX + 5, centerY + 30, 10, 10, 0, PI)
-        line(centerX, centerY+20, centerX, centerY+30)
-      
-    
-    }
-
-    strokeWeight(2);
-
-    
-
-    ellipse(centerX, centerY, 10, 10);
-    if (mouseX > 290 && mouseX < 310 && mouseY > 290 && mouseY < 310) {
-        changeColor = true;
-    } else {
-        changeColor = false;
-    }
-
+  drawSprites();
 }
-
-function bgFunction() {
-    currentBgImage = bgImage;
-}
-
-function bgFunction1() {
-    currentBgImage = bgImage2;
-}
-
-function bgFunction2() {
-    currentBgImage = bgImage3;
-}
-
