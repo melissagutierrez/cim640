@@ -1,33 +1,43 @@
-var posX = 0;
-var posY = 0;
+var frameArray = [];
+var counter = 0;
+
+var interval = 1000;
+var prevMillis = 0;
+
 
 function setup(){
- createCanvas(1000,500);
- background(125);
- background(255,0,0);
- background("purple");
- background("#999999");
 
- posX = 230;
- posY = 300;
-}
-function draw(){
-    fill ("white");
-ellipse (75,75,100,100);
- fill ("black");   
-ellipse (60,60,55,50);
-fill ("white")
+    createCanvas(500,500);
     
- ellipse (200,75,100,100);
-    fill ("black")
-ellipse (210,55,50,50);
+    for(var i =0; i < 4;i++){
+       var lstring = "assests/Thatwasclose"+ i + ".jpg" 
+       frameArray[i] = loadImage(lString);
+        
+    }
 
- fill ("red");   
+  //frameArray[0] = loadImage("assests/Thatwasclose0.jpg");
+    //frameArray[1] = loadImage("assests/Thatwasclose1.jpg");
+    //frameArray[2] = loadImage("assests/Thatwasclose2.jpg");
+    //frameArray[3] = loadImage("assests/Thatwasclose3.jpg");
 
-rect (100,200,70,20);
- fill ("white");
-stroke("cyan");
- strokeWeight (5);
+
 }
 
-
+function draw(){
+    //frameRate(1);
+    cosole.log(millis());
+    frameRate(1);
+    image(frameArray[counter],0,0);
+    
+    
+    if(millis() - prevMillis >= interval){
+          prevMillis= millis();
+        counter++;     
+    }
+    
+    
+    
+    if(counter == frameArray.length){
+       counter = 0;
+       }
+    ellipse(mouseX, mouseY, 10,10);
